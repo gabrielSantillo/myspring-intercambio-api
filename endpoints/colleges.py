@@ -1,5 +1,5 @@
 from flask import request, make_response
-from apihelpers import check_endpoint_info, check_data_sent
+from apihelpers import check_endpoint_info, organize_response
 import json
 from dbhelpers import run_statement
 
@@ -25,7 +25,8 @@ def get():
     [request.args.get('college_id')])
 
     if(type(results) == list and len(results) != 0):
-        return make_response(json.dumps(results, default=str), 200)
+        colleges = organize_response(results)
+        return make_response(json.dumps(colleges, default=str), 200)
     elif(type(results) == list and len(results) == 0):
         return make_response(json.dumps("Wrong college id.", default=str), 
         400)
