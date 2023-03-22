@@ -23,6 +23,10 @@ def get_provinces():
 def post_college():
     return endpoints.colleges.post()
 
+@app.get('/api/colleges')
+def get_colleges():
+    return endpoints.colleges.get()
+
 
 # if statement to check if the production_mode variable is true, if yes, run in production mode, if not, run in testing mode
 if (production_mode):
