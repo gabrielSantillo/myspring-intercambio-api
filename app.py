@@ -13,6 +13,12 @@ CORS(app)
 def post_province():
     return endpoints.provinces.post()
 
+
+@app.get('/api/provinces')
+def get_provinces():
+    return endpoints.provinces.get()
+
+
 # if statement to check if the production_mode variable is true, if yes, run in production mode, if not, run in testing mode
 if (production_mode):
     print("Running in Production Mode")
