@@ -25,12 +25,12 @@ DROP TABLE IF EXISTS `colleges`;
 CREATE TABLE `colleges` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `province_id` int(10) unsigned NOT NULL,
-  `college_name` varchar(50) COLLATE utf8mb4_bin NOT NULL,
+  `college_name` varchar(100) COLLATE utf8mb4_bin NOT NULL,
   `created_at` datetime NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`),
   KEY `colleges_FK` (`province_id`),
   CONSTRAINT `colleges_FK` FOREIGN KEY (`province_id`) REFERENCES `provinces` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=96 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,6 +39,7 @@ CREATE TABLE `colleges` (
 
 LOCK TABLES `colleges` WRITE;
 /*!40000 ALTER TABLE `colleges` DISABLE KEYS */;
+INSERT INTO `colleges` VALUES (1,1,'Bow Valley College','2023-03-21 18:45:32'),(2,1,'Concordia University of Edmonton','2023-03-21 18:46:06'),(3,1,'MacEwan University','2023-03-21 18:46:30'),(4,1,'Northern Alberta Institute of Technology','2023-03-21 18:46:48'),(5,1,'Olds College','2023-03-21 18:46:59'),(6,1,'Red Deer Polytechnic','2023-03-21 18:47:11'),(7,1,'Southern Alberta Institute of Technology','2023-03-21 18:47:25'),(8,2,'Adler University','2023-03-21 18:48:27'),(9,2,'Alexander College','2023-03-21 18:48:41'),(10,2,'Acsenda School of Management','2023-03-21 18:48:55'),(11,2,'British Columbia Institute of Technology','2023-03-21 18:49:18'),(12,2,'Camosun College','2023-03-21 18:49:30'),(13,2,'Capilano University','2023-03-21 18:49:41'),(14,2,'Coast Mountain College','2023-03-21 18:49:51'),(15,2,'Columbia College','2023-03-21 18:50:02'),(16,2,'Coquitlam College','2023-03-21 18:50:13'),(17,2,'Douglas College','2023-03-21 18:50:35'),(18,2,'Emily Carr University of Art & Design','2023-03-21 18:50:49'),(19,2,'Fairleigh Dickinson University','2023-03-21 18:51:03'),(20,2,'Fraser International College at Simon Fraser University','2023-03-21 18:52:15'),(21,2,'Justice Institute of BC','2023-03-21 18:52:56'),(22,2,'Kwantlen Polytechnic University','2023-03-21 18:53:27'),(23,2,'Langara College','2023-03-21 18:53:46'),(24,2,'LaSalle College Vancouver','2023-03-21 18:54:01'),(25,2,'New York Institute of Technology','2023-03-21 18:54:21'),(26,2,'North Island College','2023-03-21 18:54:31'),(27,2,'Northern Lights College','2023-03-21 18:54:54'),(28,2,'Okanagan College','2023-03-21 18:55:15'),(29,2,'Royal Roads University','2023-03-21 18:55:29'),(30,2,'Selkirk College','2023-03-21 18:55:40'),(31,2,'Sprott Shaw College','2023-03-21 18:55:49'),(32,2,'Thompson Rivers University','2023-03-21 18:56:00'),(33,2,'University Canada West','2023-03-21 18:56:10'),(34,2,'University of the Fraser Valley','2023-03-21 18:56:21'),(35,2,'Vancouver Community College','2023-03-21 18:56:33'),(36,2,'Vancouver Film School','2023-03-21 18:56:42'),(37,2,'Vancouver Island University','2023-03-21 18:56:55'),(38,2,'Whistler Adventure School','2023-03-21 18:57:10'),(39,2,'Yorkville University','2023-03-21 18:57:19'),(40,3,'Assiniboine Community College','2023-03-21 18:58:26'),(41,3,'International College of Manitoba','2023-03-21 18:58:42'),(42,3,'Manitoba Institute of Trades and Technology','2023-03-21 18:59:08'),(43,3,'Red River College','2023-03-21 18:59:20'),(44,3,'University of Winnipeg Professional, Applied and Continuing Education','2023-03-21 18:59:41'),(45,4,'New Brunswick Community College','2023-03-21 19:00:17'),(46,4,'Crandall University','2023-03-21 19:00:35'),(47,5,'College of the North Atlantic','2023-03-21 19:00:58'),(48,6,'Cape Breton University','2023-03-21 19:01:33'),(49,6,'Mount Saint Vincent University','2023-03-21 19:01:52'),(50,6,'Saint Mary’s University','2023-03-21 19:02:07'),(51,7,'Algoma University','2023-03-21 19:02:34'),(52,7,'Algonquin College','2023-03-21 19:02:46'),(53,7,'Brock University','2023-03-21 19:03:04'),(54,7,'Cambrian College','2023-03-21 19:03:14'),(55,7,'Canadian College of Naturopathic Medicine','2023-03-21 19:03:41'),(56,7,'Centennial College','2023-03-21 19:04:19'),(57,7,'Conestoga College','2023-03-21 19:04:27'),(58,7,'Confederation College','2023-03-21 19:04:38'),(59,7,'Durham College','2023-03-21 19:04:48'),(60,7,'Fanshawe College','2023-03-21 19:04:56'),(61,7,'Fleming College','2023-03-21 19:05:05'),(62,7,'George Brown College','2023-03-21 19:05:17'),(63,7,'Georgian College','2023-03-21 19:05:29'),(64,7,'Humber College','2023-03-21 19:05:38'),(65,7,'Lakehead University','2023-03-21 19:05:49'),(66,7,'Lambton College','2023-03-21 19:06:00'),(67,7,'Laurentian University','2023-03-21 19:06:11'),(68,7,'Mohawk College','2023-03-21 19:06:21'),(69,7,'Niagara College','2023-03-21 19:06:29'),(70,7,'Nipissing University','2023-03-21 19:06:39'),(71,7,'OCAD University','2023-03-21 19:06:52'),(72,7,'Ontario Tech University','2023-03-21 19:07:03'),(73,7,'Toronto Metropolitan University International College','2023-03-21 19:07:20'),(74,7,'Sault College','2023-03-21 19:07:29'),(75,7,'Seneca College','2023-03-21 19:07:37'),(76,7,'Sheridan College','2023-03-21 19:07:45'),(77,7,'St. Clair College','2023-03-21 19:07:54'),(78,7,'St. Lawrence College','2023-03-21 19:08:04'),(79,7,'Toronto Film School','2023-03-21 19:08:37'),(80,7,'University of Windsor','2023-03-21 19:08:51'),(81,7,'Wilfred Laurier University','2023-03-21 19:09:05'),(82,7,'Yorkville University','2023-03-21 19:09:45'),(83,7,'Wilfrid Laurier international College','2023-03-21 19:09:59'),(84,8,'Holland College','2023-03-21 19:10:29'),(85,8,'University of Prince Edward island','2023-03-21 19:10:41'),(86,9,'Herzing College','2023-03-21 19:11:29'),(87,9,'Hermes College Group','2023-03-21 19:11:47'),(88,9,'LaSalle College Montreal','2023-03-21 19:11:58'),(89,9,'Lester B. Pearson School Board Vocational Programs','2023-03-21 19:12:11'),(90,9,'Trebas Institute','2023-03-21 19:12:19'),(91,9,'Vanier College','2023-03-21 19:12:27'),(92,10,'Saskatchewan Polytechnic','2023-03-21 19:12:55'),(93,10,'University of Regina','2023-03-21 19:13:04'),(94,10,'University of Saskatchewan','2023-03-21 19:13:15'),(95,11,'Yukon University','2023-03-21 19:13:43');
 /*!40000 ALTER TABLE `colleges` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -82,7 +83,7 @@ UNLOCK TABLES;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `add_college`(
 province_id_input int unsigned,
-college_name varchar(50)
+college_name varchar(100)
 )
     MODIFIES SQL DATA
 begin
@@ -132,12 +133,12 @@ DELIMITER ;
 /*!50003 SET character_set_results = utf8mb4 */ ;
 /*!50003 SET collation_connection  = utf8mb4_unicode_ci */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `get_colleges`()
+CREATE DEFINER=`root`@`localhost` PROCEDURE `get_colleges`(province_id_input int unsigned)
 begin
-	select c.id, c.province_id, convert(c.college_name using utf8), convert(c.created_at using utf8)
+	select c.id as college_id, c.province_id, convert(p.province_name using utf8) as province_name, convert(c.college_name using utf8) college_name, convert(c.created_at using utf8) as created_at
 	from colleges c
 	inner join provinces p on p.id = c.province_id
-	order by c.id desc;
+	where p.id = province_id_input;
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -156,9 +157,8 @@ DELIMITER ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `get_provinces`()
 begin
-	select id, convert(province_name using utf8), created_at 
-	from provinces
-	order by id desc;
+	select id, convert(province_name using utf8) as province_name, convert(created_at using utf8) as created_at
+	from provinces;
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -175,4 +175,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-03-21 17:42:40
+-- Dump completed on 2023-03-23 10:56:40
